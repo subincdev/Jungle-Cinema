@@ -1,0 +1,137 @@
+html {
+  font-size: 10px;
+}
+
+.ir {
+  @include ir;
+}
+
+.app {
+  @include flexbox();
+}
+
+.cont-article {
+  background-color: $main;
+  width: 106rem;
+  margin-top: 8.6rem;
+  padding: 0 2.8rem 3rem;
+  @include box(0.2rem, 1.5rem);
+  .tit-article {
+    margin: 4rem 0 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    &::after {
+      margin: 3.7rem auto 0;
+      @include pseudo(65rem, 0.2rem, $gray);
+    }
+  }
+  .nav-article {
+    width: 32.7rem;
+    margin: 2.8rem auto;
+    @include flexbox(space-between);
+  }
+}
+
+.btn-element {
+  cursor: pointer;
+  &:hover {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
+    color: $black;
+  }
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: $sub;
+}
+
+.cont-movie {
+  background-color: $white;
+  @include box(0.2rem, 1.5rem);
+}
+
+.cont-movie-list {
+  padding: 2.5rem 2.6rem 2.9rem;
+  @include grid(4, 2, 2.3rem);
+  li {
+    @include box(0rem, 1rem);
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    .cont-data {
+      padding: 1.8rem 1.9rem;
+    }
+  }
+}
+
+.cont-data {
+  img {
+    width: 18rem;
+    height: 26rem;
+    @include box(0.1rem, 1rem);
+    box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.25);
+  }
+  h3 {
+    width: 168px;
+    margin: 1.1rem 0 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+  }
+}
+
+.list-movie {
+  dt,
+  dd {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+  dt {
+    color: $sub;
+  }
+  dt:nth-child(3)::after {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.25rem;
+    background-image: url("./img/star.png");
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  dd {
+    color: $black;
+  }
+  dd:nth-child(2) {
+    width: 8.5rem;
+  }
+  dd:nth-child(6) {
+    width: 150px;
+  }
+}
+
+.cont-button {
+  display: flex;
+  height: 4rem;
+  button {
+    cursor: pointer;
+    flex-grow: 1;
+  }
+  button:first-child {
+    border-right: 1px solid #bdbdbd;
+  }
+  button:last-child::before {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.3rem;
+    margin-right: 0.2rem;
+    background-image: url("./img/영화목록페이지/아이콘_재생.png");
+    background-size: contain;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}

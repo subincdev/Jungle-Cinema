@@ -1,0 +1,35 @@
+@mixin box($border, $border-radius) {
+  border: $border solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+}
+
+@mixin flexbox($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($col-num, $row-num, $gap) {
+  display: grid;
+  grid-template-columns: repeat($col-num, 1fr);
+  grid-template-rows: repeat($row-num, 1fr);
+  gap: $gap;
+}
+
+@mixin ir {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 0.1rem;
+  height: 0.1rem;
+  margin: 0.1rem;
+  overflow: hidden;
+}
+
+@mixin pseudo($w, $h, $color) {
+  content: "";
+  display: block;
+  width: $w;
+  height: $h;
+  background-color: $color;
+}
